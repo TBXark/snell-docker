@@ -13,8 +13,9 @@ RUN case "${TARGETARCH}" in \
     chmod +x snell-server && \
     rm snell.zip
     
-FROM alpine:latest
+FROM debian:latest
 COPY --from=builder /snell-server /app/snell-server
 WORKDIR /app
-ENTRYPOINT ["/app/snell-server"]
+RUN chmod +x /app/snell-server
+ENTRYPOINT [ "/app/snell-server" ]
 CMD ["-c", "/app/snell-server.conf"]

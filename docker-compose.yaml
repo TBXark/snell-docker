@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ghcr.io/tbxark/snell-server:latest
+    container_name: snell-server
+    volumes:
+      - ./snell-server.conf:/app/snell-server.conf
