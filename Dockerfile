@@ -3,9 +3,9 @@ ARG TARGETARCH
 RUN apk add --no-cache wget unzip 
 RUN case "${TARGETARCH}" in \
     "amd64") \
-        BINARY_URL="https://dl.nssurge.com/snell/snell-server-v5.0.0b3-linux-amd64.zip" ;; \
+        BINARY_URL="https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-amd64.zip" ;; \
     "arm64") \
-        BINARY_URL="https://dl.nssurge.com/snell/snell-server-v5.0.0b3-linux-aarch64.zip" ;; \
+        BINARY_URL="https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-aarch64.zip" ;; \
     *) echo "Unsupported architecture: ${TARGETARCH}"; exit 1 ;; \
     esac  && \
     wget -O snell.zip "${BINARY_URL}" && \
